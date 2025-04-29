@@ -45,7 +45,6 @@ func (h *TaskHandler) CreateTask(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// The custom unmarshal will have already validated the date
-	// Now just verify other required fields
 	if task.Title == "" {
 		http.Error(w, "Title is required", http.StatusBadRequest)
 		return
@@ -87,7 +86,6 @@ func (h *TaskHandler) CreateTask(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(createdTask) // Send back the complete task
 }
 
-// GetTasks retrieves all tasks.
 // GetTasks retrieves all tasks.
 func (h *TaskHandler) GetTasks(w http.ResponseWriter, r *http.Request) {
 	rows, err := h.DB.Query("SELECT id, title, description, status, due_date FROM tasks")

@@ -15,8 +15,8 @@ This project demonstrates how to integrate a Go application with a PostgreSQL da
 1.  **Clone the repository:**
 
     ```bash
-    git clone <your_repository_url>
-    cd <your_repository_name>
+    git clone https://github.com/eRaBxEs/task-manager-api
+    cd https://github.com/eRaBxEs/task-manager-api
     ```
 
 2.  **Create a .env file:**

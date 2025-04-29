@@ -23,7 +23,7 @@ func SetupRoutes(db *sql.DB) http.Handler {
 
 	// Apply CORS middleware to all routes
 	headersOk := gorillaHandlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"})
-	originsOk := gorillaHandlers.AllowedOrigins([]string{"*"}) // or specify your frontend domains instead of "*"
+	originsOk := gorillaHandlers.AllowedOrigins([]string{"*"})
 	methodsOk := gorillaHandlers.AllowedMethods([]string{"GET", "HEAD", "POST", "PUT", "DELETE", "OPTIONS"})
 
 	return gorillaHandlers.CORS(headersOk, originsOk, methodsOk)(r)
